@@ -1,0 +1,57 @@
+import { Instagram, Facebook, Phone, Mail } from 'lucide-react'
+
+const Footer = () => {
+    return (
+        <footer className="bg-brand-blue text-white py-12">
+            <div className="container-custom">
+                <div className="grid md:grid-cols-3 gap-8 mb-8">
+                    {/* Brand */}
+                    <div>
+                        <div className="text-2xl font-bold mb-4">
+                            NEW<span className="text-brand-orange">ENERGIA</span>
+                        </div>
+                        <p className="text-brand-lightBlue/80 text-sm leading-relaxed max-w-xs">
+                            Energia solar levada a sério. Projetos residenciais e comerciais com acompanhamento técnico de ponta a ponta.
+                        </p>
+                    </div>
+
+                    {/* Quick Links */}
+                    <div>
+                        <h3 className="text-lg font-bold mb-4 text-brand-orange">Links Rápidos</h3>
+                        <ul className="space-y-2 text-sm text-brand-lightBlue/80">
+                            <li><a href="#hero" className="hover:text-white transition-colors">Início</a></li>
+                            <li><a href="#identification" className="hover:text-white transition-colors">Para quem é</a></li>
+                            <li><a href="#differentials" className="hover:text-white transition-colors">Diferenciais</a></li>
+                            <li><a href="#social-proof" className="hover:text-white transition-colors">Projetos Realizados</a></li>
+                        </ul>
+                    </div>
+
+                    {/* Contact */}
+                    <div>
+                        <h3 className="text-lg font-bold mb-4 text-brand-orange">Contato</h3>
+                        <div className="space-y-3 text-sm text-brand-lightBlue/80">
+                            <p className="flex items-center gap-2">
+                                <Phone size={16} />
+                                (00) 00000-0000
+                            </p>
+                            <p className="flex items-center gap-2">
+                                <Mail size={16} />
+                                contato@newenergiasolar.com.br
+                            </p>
+                            <div className="flex gap-4 mt-4">
+                                <a href="#" className="hover:text-brand-orange transition-colors"><Instagram size={24} /></a>
+                                <a href="#" className="hover:text-brand-orange transition-colors"><Facebook size={24} /></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="border-t border-white/10 pt-8 text-center text-xs text-brand-lightBlue/60">
+                    <p>&copy; {new Date().getFullYear()} New Energia Solar. Todos os direitos reservados.</p>
+                </div>
+            </div>
+        </footer>
+    )
+}
+
+export default Footer
