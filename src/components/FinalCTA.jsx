@@ -1,7 +1,9 @@
 import { useState } from 'react'
 import { ArrowRight, CheckCircle, Calculator, ChevronDown } from 'lucide-react'
+import { useNavigate } from 'react-router-dom'
 
 const FinalCTA = () => {
+    const navigate = useNavigate()
     const [formData, setFormData] = useState({
         name: '',
         whatsapp: '',
@@ -50,20 +52,15 @@ const FinalCTA = () => {
             }
         }
 
-        // 2. Redirecionar para WhatsApp
-        const message = `Olá! Vim pelo site. 
-Nome: ${formData.name}
-Energia: ${formData.billValue}
-Gostaria de uma análise inicial gratuita.`
 
-        const whatsappUrl = `https://wa.me/5500000000000?text=${encodeURIComponent(message)}`
-        window.open(whatsappUrl, '_blank')
+
+        // 3. Redirecionar para página de Obrigado
+        navigate('/obrigado')
     }
 
     return (
         <section id="contact" className="py-20 relative overflow-hidden">
-            {/* ... rest of component ... */}
-            {/* Video Background with Masking Effects - mantendo o conteúdo anterior */}
+            {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
                     autoPlay
