@@ -25,7 +25,6 @@ function App() {
         <FinalCTA />
       </main>
       <Footer />
-      <WhatsAppButton />
     </div>
   )
 }

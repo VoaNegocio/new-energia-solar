@@ -44,63 +44,58 @@
     /* Firefox */
   }
 
-  /* 3D Solar Button - Option 2: Tactile Panel */
-  .btn-solar-tactile {
+  /* 3D Button - Primary (Brand Orange) */
+  .btn-3d-primary {
     position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
     background: linear-gradient(180deg, #FFD25E 0%, #FFB400 100%) !important;
     color: #002B5B !important;
     border: none;
     border-radius: 12px;
+    font-weight: 700;
     box-shadow:
       0 6px 0 #CC8400,
-      /* The "Thick Base" */
       0 12px 15px -3px rgba(0, 0, 0, 0.3),
-      /* Drop Shadow */
       inset 0 2px 0 rgba(255, 255, 255, 0.4);
-    /* Top Highlight */
     transform: translateY(0);
     transition: all 0.1s;
-    overflow: hidden !important;
-    /* Keep charge inside */
+    cursor: pointer;
   }
 
-  .btn-solar-tactile:active,
-  .btn-solar-tactile.charging {
+  .btn-3d-primary:active {
     transform: translateY(6px);
-    /* Push down the "thickness" */
     box-shadow:
       0 0 0 #CC8400,
-      /* Base disappears */
       inset 0 2px 4px rgba(0, 0, 0, 0.2);
-    /* Internal shadow */
   }
 
-  /* Charging Effect (Battery Fill) */
-  .btn-solar-tactile::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    width: 0%;
-    /* Start empty */
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.6) 50%, rgba(255, 255, 255, 0) 100%);
-    opacity: 0;
-    transition: all 0.2s ease-out;
-    /* Quick release */
-    z-index: 1;
-    /* Behind text but over gradient */
-    pointer-events: none;
+  /* 3D Button - White (For dark backgrounds) */
+  .btn-3d-white {
+    position: relative;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: linear-gradient(180deg, #FFFFFF 0%, #F3F4F6 100%) !important;
+    color: #002B5B !important;
+    border: none;
+    border-radius: 12px;
+    font-weight: 700;
+    box-shadow:
+      0 6px 0 #D1D5DB,
+      0 12px 15px -3px rgba(0, 0, 0, 0.3),
+      inset 0 2px 0 rgba(255, 255, 255, 1);
+    transform: translateY(0);
+    transition: all 0.1s;
+    cursor: pointer;
   }
 
-  /* When clicked OR charging class added */
-  .btn-solar-tactile:active::after,
-  .btn-solar-tactile.charging::after {
-    width: 100%;
-    opacity: 1;
-    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.8) 100%);
-    transition: all 1.5s cubic-bezier(0.22, 1, 0.36, 1);
-    /* Realistic charge curve */
+  .btn-3d-white:active {
+    transform: translateY(6px);
+    box-shadow:
+      0 0 0 #D1D5DB,
+      inset 0 2px 4px rgba(0, 0, 0, 0.1);
   }
 }
 

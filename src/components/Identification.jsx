@@ -75,10 +75,16 @@ const Identification = () => {
                     </div>
 
                     <div className="text-center pt-8 border-t border-white/10 max-w-2xl mx-auto">
-                        <p className="text-xl font-bold text-blue-100">
+                        <p className="text-xl font-bold text-blue-100 mb-8">
                             Energia solar é investimento. <br />
                             <span className="text-brand-orange text-2xl">E investimento mal decidido cobra depois.</span>
                         </p>
+                        <a href="#contact" className="btn-3d-primary px-8 py-4 text-lg">
+                            <span className="relative z-10 flex items-center gap-2">
+                                Quero minha análise gratuita
+                                <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" /></svg>
+                            </span>
+                        </a>
                     </div>
                 </div>
             </div>

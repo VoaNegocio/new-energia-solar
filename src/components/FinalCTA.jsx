@@ -24,22 +24,46 @@ const FinalCTA = () => {
         "Acima de R$500"
     ]
 
-    const handleSubmit = (e) => {
+    const handleSubmit = async (e) => {
         e.preventDefault()
-        // Prepare message for WhatsApp
+
+        // 1. Enviar para Webhook (CRM, n8n, Zapier)
+        // Substitua pela URL do seu webhook real
+        const webhookUrl = ""
+
+        if (webhookUrl) {
+            try {
+                await fetch(webhookUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        name: formData.name,
+                        whatsapp: formData.whatsapp,
+                        billValue: formData.billValue,
+                        submittedAt: new Date().toISOString(),
+                        source: "Landing Page Solar"
+                    }),
+                    mode: 'no-cors' // Importante para evitar erros de CORS em webhooks simples
+                })
+            } catch (error) {
+                console.error("Erro ao enviar para webhook:", error)
+            }
+        }
+
+        // 2. Redirecionar para WhatsApp
         const message = `Olá! Vim pelo site. 
 Nome: ${formData.name}
 Energia: ${formData.billValue}
 Gostaria de uma análise inicial gratuita.`
 
-        // Redirect to WhatsApp
         const whatsappUrl = `https://wa.me/5500000000000?text=${encodeURIComponent(message)}`
         window.open(whatsappUrl, '_blank')
     }
 
     return (
-        <section className="py-20 relative overflow-hidden">
-            {/* Video Background with Masking Effects */}
+        <section id="contact" className="py-20 relative overflow-hidden">
+            {/* ... rest of component ... */}
+            {/* Video Background with Masking Effects - mantendo o conteúdo anterior */}
             <div className="absolute inset-0 z-0">
                 <video
                     autoPlay
@@ -174,9 +198,11 @@ Gostaria de uma análise inicial gratuita.`
                             {/* Submit Button */}
                             <button
                                 type="submit"
-                                className="w-full btn-primary flex items-center justify-center gap-2 text-base shadow-lg hover:shadow-xl mt-4"
+                                className="w-full btn-3d-primary flex items-center justify-center gap-2 text-lg py-4 mt-6"
                             >
-                                Quero entender se faz sentido pra mim
+                                <span className="relative z-10 flex items-center gap-2">
+                                    Quero entender se faz sentido pra mim
+                                </span>
                             </button>
 
                             <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-2">

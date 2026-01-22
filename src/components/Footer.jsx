@@ -30,18 +30,10 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-4 text-brand-orange">Contato</h3>
                         <div className="space-y-3 text-sm text-brand-lightBlue/80">
-                            <p className="flex items-center gap-2">
-                                <Phone size={16} />
-                                (00) 00000-0000
-                            </p>
-                            <p className="flex items-center gap-2">
-                                <Mail size={16} />
-                                contato@newenergiasolar.com.br
-                            </p>
-                            <div className="flex gap-4 mt-4">
-                                <a href="#" className="hover:text-brand-orange transition-colors"><Instagram size={24} /></a>
-                                <a href="#" className="hover:text-brand-orange transition-colors"><Facebook size={24} /></a>
-                            </div>
+                            <a href="#contact" className="flex items-center gap-2 hover:text-white transition-colors">
+                                Quero falar com um especialista
+                            </a>
+
                         </div>
                     </div>
                 </div>
