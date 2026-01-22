@@ -12,7 +12,7 @@ const Hero = () => {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                    <source src="/videos/videobackgroundhero_opt.mp4" type="video/mp4" />
                 </video>
                 {/* Overlay to ensure text readability */}
                 <div className="absolute inset-0 bg-brand-lightBlue/80 mix-blend-overlay"></div>
@@ -38,7 +38,7 @@ const Hero = () => {
                     <div className="lg:hidden relative mb-10">
                         <div className="rounded-3xl overflow-hidden shadow-2xl bg-gray-200 aspect-[4/3] group relative z-0">
                             <img
-                                src="/New Energia Solar/painelsolar1-horizontal.jpg"
+                                src="/New Energia Solar/painelsolar1-horizontal.webp"
                                 alt="Casa com projetos de energia solar da New Energia Solar"
                                 className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                             />
@@ -85,7 +85,7 @@ const Hero = () => {
                 <div className="relative hidden lg:block">
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-200 aspect-[4/3] group">
                         <img
-                            src="/New Energia Solar/painelsolar1-horizontal.jpg"
+                            src="/New Energia Solar/painelsolar1-horizontal.webp"
                             alt="Casa com projetos de energia solar da New Energia Solar"
                             className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                         />

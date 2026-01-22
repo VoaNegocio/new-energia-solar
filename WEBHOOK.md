@@ -26,18 +26,20 @@ const handleSubmit = async (e) => {
 
     if (webhookUrl) {
         try {
+            // Prepare data as URLSearchParams (standard form data)
+            const params = new URLSearchParams()
+            params.append('name', formData.name)
+            params.append('whatsapp', formData.whatsapp)
+            params.append('billValue', formData.billValue)
+            params.append('submittedAt', new Date().toISOString())
+            params.append('source', "Landing Page Solar")
+
             // Dispara o POST sem esperar resposta bloqueante (Fire and Forget)
             await fetch(webhookUrl, {
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    name: formData.name,
-                    whatsapp: formData.whatsapp,
-                    billValue: formData.billValue,
-                    submittedAt: new Date().toISOString(),
-                    source: "Landing Page Solar" // Tag para identificar a origem
-                }),
-                mode: 'no-cors' // Essencial para evitar erros de CORS em webhooks simples
+                headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                body: params,
+                mode: 'no-cors' 
             })
         } catch (error) {
             console.error("Erro ao enviar para webhook (falha silenciosa):", error)

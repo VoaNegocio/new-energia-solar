@@ -35,17 +35,19 @@ const FinalCTA = () => {
 
         if (webhookUrl) {
             try {
+                // Prepare data as URLSearchParams (standard form data)
+                const params = new URLSearchParams()
+                params.append('name', formData.name)
+                params.append('whatsapp', formData.whatsapp)
+                params.append('billValue', formData.billValue)
+                params.append('submittedAt', new Date().toISOString())
+                params.append('source', "Landing Page Solar")
+
                 await fetch(webhookUrl, {
                     method: 'POST',
-                    headers: { 'Content-Type': 'application/json' },
-                    body: JSON.stringify({
-                        name: formData.name,
-                        whatsapp: formData.whatsapp,
-                        billValue: formData.billValue,
-                        submittedAt: new Date().toISOString(),
-                        source: "Landing Page Solar"
-                    }),
-                    mode: 'no-cors' // Importante para evitar erros de CORS em webhooks simples
+                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+                    body: params,
+                    mode: 'no-cors'
                 })
             } catch (error) {
                 console.error("Erro ao enviar para webhook:", error)
@@ -69,7 +71,7 @@ const FinalCTA = () => {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                    <source src="/videos/videobackgroundhero_opt.mp4" type="video/mp4" />
                 </video>
                 {/* Lighter overlays to show more video while keeping blue tint */}
                 <div className="absolute inset-0 bg-brand-blue/75 mix-blend-multiply"></div>

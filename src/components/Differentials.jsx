@@ -56,7 +56,7 @@ const Differentials = () => {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                    <source src="/videos/videobackgroundhero_opt.mp4" type="video/mp4" />
                 </video>
                 {/* Blue overlays to mask usage - FinalCTA Style */}
                 <div className="absolute inset-0 bg-brand-blue/75 mix-blend-multiply"></div>

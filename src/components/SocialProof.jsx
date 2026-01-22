@@ -8,19 +8,19 @@ const SocialProof = () => {
 
     const testimonials = [
         {
-            imageSrc: "/New Energia Solar/painelsolar1-vertical.jpg",
+            imageSrc: "/New Energia Solar/painelsolar1-vertical.webp",
             imageAlt: "Instalação Solar 1",
             quote: "Excelente atendimento e acompanhamento. O projeto ficou exatamente como prometido.",
             location: "Ituverava - SP"
         },
         {
-            imageSrc: "/New Energia Solar/painelsolar7-vertical.jpg",
+            imageSrc: "/New Energia Solar/painelsolar7-vertical.webp",
             imageAlt: "Instalação Solar 2",
             quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Energia Solar.",
             location: "Região - SP"
         },
         {
-            imageSrc: "/New Energia Solar/card3.jpeg",
+            imageSrc: "/New Energia Solar/card3.webp",
             imageAlt: "Instalação Solar 3",
             quote: "Fiquei muito seguro com a explicação técnica. Entendi tudo antes de fechar.",
             location: "Ituverava - SP"
@@ -55,7 +55,7 @@ const SocialProof = () => {
                     playsInline
                     className="w-full h-full object-cover"
                 >
-                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                    <source src="/videos/videobackgroundhero_opt.mp4" type="video/mp4" />
                 </video>
                 {/* Blue overlays to mask usage - FinalCTA Style */}
                 <div className="absolute inset-0 bg-brand-blue/75 mix-blend-multiply"></div>
