@@ -1,6 +1,10 @@
 import { ClipboardCheck, HardHat, ShieldCheck, Scale } from 'lucide-react'
+import { useState, useRef, useEffect } from 'react'
 
 const Differentials = () => {
+    const [activeIndex, setActiveIndex] = useState(0)
+    const scrollRef = useRef(null)
+
     const differentials = [
         {
             icon: <ClipboardCheck size={32} className="text-brand-orange" />,
@@ -24,28 +28,81 @@ const Differentials = () => {
         }
     ]
 
+    const handleScroll = () => {
+        if (scrollRef.current) {
+            const scrollLeft = scrollRef.current.scrollLeft
+            const width = scrollRef.current.offsetWidth
+            const index = Math.round(scrollLeft / width)
+            setActiveIndex(index)
+        }
+    }
+
+    useEffect(() => {
+        const container = scrollRef.current
+        if (container) {
+            container.addEventListener('scroll', handleScroll)
+            return () => container.removeEventListener('scroll', handleScroll)
+        }
+    }, [])
+
     return (
-        <section id="differentials" className="py-20 bg-brand-gray/30">
-            <div className="container-custom">
-                <div className="max-w-3xl mx-auto text-center mb-16">
-                    <h2 className="text-3xl lg:text-4xl font-bold text-brand-blue mb-6">
-                        Na New, você não recebe só um orçamento.<br />
+        <section id="differentials" className="py-24 relative overflow-hidden">
+            {/* Video Background with Masking Effects */}
+            <div className="absolute inset-0 z-0">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                >
+                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                </video>
+                {/* Blue overlays to mask usage - FinalCTA Style */}
+                <div className="absolute inset-0 bg-brand-blue/75 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-brand-blue/60 backdrop-blur-[2px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/70 to-transparent"></div>
+            </div>
+
+            <div className="container-custom relative z-10">
+                <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-6 backdrop-blur-md border border-white/20">
+                        <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
+                        DIFERENCIAIS
+                    </div>
+                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+                        Na New, você não recebe só um orçamento.<br className="hidden md:block" />
                         <span className="text-brand-orange">Você recebe orientação e acompanhamento real.</span>
                     </h2>
-                    <p className="text-gray-600 text-lg">O que muda na prática:</p>
+                    <p className="text-brand-lightBlue/80 text-lg">O que muda na prática:</p>
                 </div>
 
-                <div className="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                {/* Mobile Horizontal Scroll / Desktop Grid */}
+                <div
+                    ref={scrollRef}
+                    className="flex md:grid md:grid-cols-2 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 px-4 md:px-0 -mx-4 md:mx-auto max-w-4xl scrollbar-hide"
+                >
                     {differentials.map((item, index) => (
-                        <div key={index} className="bg-white p-8 rounded-2xl shadow-sm hover:shadow-md transition-shadow border border-gray-100 flex items-start gap-6 group">
-                            <div className="bg-brand-blue/5 p-4 rounded-xl group-hover:bg-brand-blue/10 transition-colors">
+                        <div key={index} className="flex-shrink-0 w-[85%] md:w-auto snap-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group">
+                            <div className="bg-brand-orange/10 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                                 {item.icon}
                             </div>
                             <div>
-                                <h3 className="text-xl font-bold text-brand-blue mb-2">{item.title}</h3>
+                                <h3 className="text-xl font-bold text-brand-blue mb-3">{item.title}</h3>
                                 <p className="text-gray-600 leading-relaxed">{item.description}</p>
                             </div>
                         </div>
+                    ))}
+                </div>
+
+                {/* Dots for Mobile */}
+                <div className="flex justify-center gap-2 mt-2 md:hidden">
+                    {differentials.map((_, index) => (
+                        <div
+                            key={index}
+                            className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeIndex ? 'bg-brand-orange w-4' : 'bg-gray-300'
+                                }`}
+                        />
                     ))}
                 </div>
             </div>

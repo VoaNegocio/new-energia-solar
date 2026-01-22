@@ -37,11 +37,22 @@ Gostaria de uma análise inicial gratuita.`
     }
 
     return (
-        <section className="py-20 bg-brand-blue relative overflow-hidden">
-            {/* Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full overflow-hidden opacity-10 pointer-events-none">
-                <div className="absolute -top-24 -left-24 w-96 h-96 rounded-full bg-brand-orange blur-3xl"></div>
-                <div className="absolute bottom-0 right-0 w-96 h-96 rounded-full bg-blue-400 blur-3xl"></div>
+        <section className="py-20 relative overflow-hidden">
+            {/* Video Background with Masking Effects */}
+            <div className="absolute inset-0 z-0">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                >
+                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                </video>
+                {/* Lighter overlays to show more video while keeping blue tint */}
+                <div className="absolute inset-0 bg-brand-blue/75 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-brand-blue/60 backdrop-blur-[2px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/70 to-transparent"></div>
             </div>
 
             <div className="container-custom relative z-10">
@@ -98,7 +109,7 @@ Gostaria de uma análise inicial gratuita.`
                                     required
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800"
+                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800"
                                     placeholder="Seu nome completo"
                                 />
                             </div>
@@ -113,7 +124,7 @@ Gostaria de uma análise inicial gratuita.`
                                     required
                                     value={formData.whatsapp}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-lg bg-gray-50 border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800"
+                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800"
                                     placeholder="(00) 00000-0000"
                                 />
                             </div>
@@ -124,8 +135,8 @@ Gostaria de uma análise inicial gratuita.`
                                 <div className="space-y-3">
                                     {billOptions.map((option, index) => (
                                         <label key={index} className={`flex items-center p-3 rounded-lg border cursor-pointer transition-all ${formData.billValue === option
-                                                ? 'border-brand-orange bg-brand-orange/5 ring-1 ring-brand-orange'
-                                                : 'border-gray-200 hover:border-brand-orange/50 hover:bg-gray-50'
+                                            ? 'border-brand-orange bg-brand-orange/5 ring-1 ring-brand-orange'
+                                            : 'border-gray-200 hover:border-brand-orange/50 hover:bg-gray-50'
                                             }`}>
                                             <input
                                                 type="radio"

@@ -2,17 +2,38 @@ import { Check, X } from 'lucide-react'
 
 const Identification = () => {
     return (
-        <section id="identification" className="py-20 bg-brand-gray/50">
-            <div className="container-custom">
+        <section id="identification" className="py-24 relative overflow-hidden">
+            {/* Video Background with Masking Effects */}
+            <div className="absolute inset-0 z-0">
+                <video
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    className="w-full h-full object-cover"
+                >
+                    <source src="/videos/videobackgroundhero.mp4" type="video/mp4" />
+                </video>
+                {/* Blue overlays to mask usage - FinalCTA Style */}
+                <div className="absolute inset-0 bg-brand-blue/75 mix-blend-multiply"></div>
+                <div className="absolute inset-0 bg-brand-blue/60 backdrop-blur-[2px]"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-brand-blue via-brand-blue/70 to-transparent"></div>
+            </div>
+
+            <div className="container-custom relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-12">
-                        <h2 className="text-3xl font-bold text-brand-blue mb-4">
+                    <div className="text-center mb-16">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-6 backdrop-blur-md border border-white/20">
+                            <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
+                            PERFIL IDEAL
+                        </div>
+                        <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
                             Essa consultoria é para você que:
                         </h2>
                     </div>
 
-                    <div className="grid md:grid-cols-2 gap-8 mb-12">
-                        {/* Positive Qualifiers */}
+                    <div className="grid md:grid-cols-2 gap-8 mb-16">
+                        {/* Positive Qualifiers - Tactile Cards */}
                         <div className="space-y-4">
                             {[
                                 "Mora em casa própria",
@@ -21,35 +42,42 @@ const Identification = () => {
                                 "Tem medo de gastar errado ou ser mal atendido",
                                 "Prefere qualidade e orientação a preço baixo"
                             ].map((item, index) => (
-                                <div key={index} className="flex items-start gap-3 p-3 bg-white rounded-lg shadow-sm border border-gray-100">
-                                    <div className="mt-1 min-w-5 min-h-5 rounded-full bg-green-100 flex items-center justify-center">
-                                        <Check size={14} className="text-green-600" />
+                                <div key={index} className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-blue/20 cursor-default">
+                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
+                                        <Check size={20} className="text-green-600" />
                                     </div>
-                                    <span className="text-gray-700 font-medium">{item}</span>
+                                    <span className="text-gray-700 font-medium group-hover:text-brand-blue transition-colors">{item}</span>
                                 </div>
                             ))}
                         </div>
 
-                        {/* Negative Qualifiers */}
+                        {/* Negative Qualifiers - Warning Cards */}
                         <div className="space-y-4">
                             {[
                                 "Não é para quem escolhe só pelo menor preço",
                                 "Não é para quem quer decidir sem entender o projeto"
                             ].map((item, index) => (
-                                <div key={index} className="flex items-start gap-3 p-3 bg-red-50/50 rounded-lg border border-red-100">
-                                    <div className="mt-1 min-w-5 min-h-5 rounded-full bg-red-100 flex items-center justify-center">
-                                        <X size={14} className="text-red-500" />
+                                <div key={index} className="flex items-center gap-4 p-5 bg-red-50/30 rounded-2xl border border-red-100 transition-all duration-300 hover:bg-red-50/80">
+                                    <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
+                                        <X size={20} className="text-red-500" />
                                     </div>
-                                    <span className="text-gray-600">{item}</span>
+                                    <span className="text-gray-600 font-medium">{item}</span>
                                 </div>
                             ))}
+
+                            {/* Callout Box */}
+                            <div className="mt-8 p-6 bg-brand-blue/5 rounded-2xl border border-brand-blue/10 text-center md:text-left">
+                                <p className="text-sm text-brand-blue font-semibold">
+                                    💡 A gente valoriza o seu dinheiro tanto quanto você. Por isso, não vendemos "kit padrão". Vendemos solução.
+                                </p>
+                            </div>
                         </div>
                     </div>
 
-                    <div className="text-center border-t border-gray-200 pt-8 max-w-2xl mx-auto">
-                        <p className="text-lg font-bold text-brand-blue">
-                            Energia solar é investimento.<br />
-                            <span className="text-brand-orange">E investimento mal decidido cobra depois.</span>
+                    <div className="text-center pt-8 border-t border-gray-200/50 max-w-2xl mx-auto">
+                        <p className="text-xl font-bold text-gray-400">
+                            Energia solar é investimento. <br />
+                            <span className="text-brand-orange text-2xl">E investimento mal decidido cobra depois.</span>
                         </p>
                     </div>
                 </div>
