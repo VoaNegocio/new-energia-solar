@@ -57,25 +57,25 @@ const Identification = () => {
                                 "Não é para quem escolhe só pelo menor preço",
                                 "Não é para quem quer decidir sem entender o projeto"
                             ].map((item, index) => (
-                                <div key={index} className="flex items-center gap-4 p-5 bg-red-50/30 rounded-2xl border border-red-100 transition-all duration-300 hover:bg-red-50/80">
+                                <div key={index} className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-red-100 transition-all duration-300 hover:bg-red-50 hover:border-red-200">
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
                                         <X size={20} className="text-red-500" />
                                     </div>
-                                    <span className="text-gray-600 font-medium">{item}</span>
+                                    <span className="text-gray-700 font-medium">{item}</span>
                                 </div>
                             ))}
 
                             {/* Callout Box */}
-                            <div className="mt-8 p-6 bg-brand-blue/5 rounded-2xl border border-brand-blue/10 text-center md:text-left">
-                                <p className="text-sm text-brand-blue font-semibold">
+                            <div className="mt-8 p-6 bg-white/10 rounded-2xl border border-white/20 text-center md:text-left backdrop-blur-md">
+                                <p className="text-sm text-blue-50 font-semibold">
                                     💡 A gente valoriza o seu dinheiro tanto quanto você. Por isso, não vendemos "kit padrão". Vendemos solução.
                                 </p>
                             </div>
                         </div>
                     </div>
 
-                    <div className="text-center pt-8 border-t border-gray-200/50 max-w-2xl mx-auto">
-                        <p className="text-xl font-bold text-gray-400">
+                    <div className="text-center pt-8 border-t border-white/10 max-w-2xl mx-auto">
+                        <p className="text-xl font-bold text-blue-100">
                             Energia solar é investimento. <br />
                             <span className="text-brand-orange text-2xl">E investimento mal decidido cobra depois.</span>
                         </p>

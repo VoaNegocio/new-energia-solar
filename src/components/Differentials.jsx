@@ -74,7 +74,7 @@ const Differentials = () => {
                         Na New, você não recebe só um orçamento.<br className="hidden md:block" />
                         <span className="text-brand-orange">Você recebe orientação e acompanhamento real.</span>
                     </h2>
-                    <p className="text-brand-lightBlue/80 text-lg">O que muda na prática:</p>
+                    <p className="text-blue-50 text-lg">O que muda na prática:</p>
                 </div>
 
                 {/* Mobile Horizontal Scroll / Desktop Grid */}

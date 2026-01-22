@@ -7,17 +7,17 @@ const SocialProof = () => {
 
     const testimonials = [
         {
-            photoPlaceholder: "[FOTO INSTALAÇÃO 1]",
+            photoPlaceholder: <img src="/New Energia Solar/painelsolar1-vertical.jpg" alt="Instalação Solar 1" className="w-full h-full object-cover" />,
             quote: "Excelente atendimento e acompanhamento. O projeto ficou exatamente como prometido.",
             location: "Ituverava - SP"
         },
         {
-            photoPlaceholder: "[FOTO INSTALAÇÃO 2]",
+            photoPlaceholder: <img src="/New Energia Solar/painelsolar2-vertical.jpg" alt="Instalação Solar 2" className="w-full h-full object-cover" />,
             quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Energia Solar.",
             location: "Região - SP"
         },
         {
-            photoPlaceholder: "[FOTO INSTALAÇÃO 3]",
+            photoPlaceholder: <img src="/New Energia Solar/painelsolar3-vertical.jpg" alt="Instalação Solar 3" className="w-full h-full object-cover" />,
             quote: "Fiquei muito seguro com a explicação técnica. Entendi tudo antes de fechar.",
             location: "Ituverava - SP"
         }
@@ -68,7 +68,7 @@ const SocialProof = () => {
                     <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
                         Famílias da região já optaram por fazer energia solar do jeito certo
                     </h2>
-                    <p className="text-lg text-brand-lightBlue/80 max-w-2xl mx-auto">
+                    <p className="text-lg text-blue-50 max-w-2xl mx-auto">
                         Energia solar não se prova com promessa.
                         <br />
                         <span className="font-bold text-brand-orange">Se prova com projeto bem executado.</span>
@@ -81,7 +81,7 @@ const SocialProof = () => {
                 >
                     {testimonials.map((item, index) => (
                         <div key={index} className="min-w-[85%] sm:min-w-[350px] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group h-full flex flex-col">
-                            <div className="h-48 bg-gray-200 flex items-center justify-center text-gray-400 font-bold relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
+                            <div className="h-96 bg-gray-200 flex items-center justify-center text-gray-400 font-bold relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
                                 {item.photoPlaceholder}
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                             </div>
