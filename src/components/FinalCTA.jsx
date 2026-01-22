@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { ArrowRight, CheckCircle, Calculator } from 'lucide-react'
+import { ArrowRight, CheckCircle, Calculator, ChevronDown } from 'lucide-react'
 
 const FinalCTA = () => {
     const [formData, setFormData] = useState({
@@ -7,6 +7,7 @@ const FinalCTA = () => {
         whatsapp: '',
         billValue: ''
     })
+    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
 
     const handleChange = (e) => {
         const { name, value } = e.target
@@ -90,7 +91,7 @@ Gostaria de uma análise inicial gratuita.`
                     </div>
 
                     {/* Right: Form Card */}
-                    <div className="bg-white rounded-2xl shadow-2xl p-8 lg:p-10">
+                    <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 lg:p-10">
                         <h3 className="text-2xl font-bold text-brand-blue mb-2">
                             Faça uma análise inicial gratuita
                         </h3>
@@ -109,7 +110,7 @@ Gostaria de uma análise inicial gratuita.`
                                     required
                                     value={formData.name}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800"
+                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800 text-base"
                                     placeholder="Seu nome completo"
                                 />
                             </div>
@@ -124,32 +125,50 @@ Gostaria de uma análise inicial gratuita.`
                                     required
                                     value={formData.whatsapp}
                                     onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800"
+                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800 text-base"
                                     placeholder="(00) 00000-0000"
                                 />
                             </div>
 
-                            {/* Bill Value */}
-                            <div>
-                                <label className="block text-sm font-semibold text-gray-700 mb-3">Gasto médio mensal com energia</label>
-                                <div className="space-y-3">
-                                    {billOptions.map((option, index) => (
-                                        <label key={index} className={`flex items-center p-3 rounded-lg border cursor-pointer transition-all ${formData.billValue === option
-                                            ? 'border-brand-orange bg-brand-orange/5 ring-1 ring-brand-orange'
-                                            : 'border-gray-200 hover:border-brand-orange/50 hover:bg-gray-50'
-                                            }`}>
-                                            <input
-                                                type="radio"
-                                                name="billValue"
-                                                value={option}
-                                                checked={formData.billValue === option}
-                                                onChange={handleChange}
-                                                className="w-4 h-4 text-brand-orange focus:ring-brand-orange border-gray-300"
-                                            />
-                                            <span className="ml-3 text-sm font-medium text-gray-700">{option}</span>
-                                        </label>
-                                    ))}
-                                </div>
+                            {/* Bill Value - Custom Dropdown */}
+                            <div className="relative">
+                                <label className="block text-sm font-semibold text-gray-700 mb-2">Gasto médio mensal com energia</label>
+                                <button
+                                    type="button"
+                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-gray-800 text-base text-left flex items-center justify-between"
+                                >
+                                    <span className={formData.billValue ? "text-gray-800" : "text-gray-400"}>
+                                        {formData.billValue || "Selecione uma opção..."}
+                                    </span>
+                                    <ChevronDown
+                                        size={20}
+                                        className={`text-gray-500 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}
+                                    />
+                                </button>
+
+                                {isDropdownOpen && (
+                                    <div className="absolute z-20 top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
+                                        {billOptions.map((option, index) => (
+                                            <button
+                                                key={index}
+                                                type="button"
+                                                onClick={() => {
+                                                    setFormData(prev => ({ ...prev, billValue: option }))
+                                                    setIsDropdownOpen(false)
+                                                }}
+                                                className="w-full px-4 py-3 text-left hover:bg-brand-orange/5 hover:text-brand-orange transition-colors flex items-center justify-between group"
+                                            >
+                                                <span className={`text-base ${formData.billValue === option ? 'font-bold text-brand-orange' : 'text-gray-700'}`}>
+                                                    {option}
+                                                </span>
+                                                {formData.billValue === option && (
+                                                    <CheckCircle size={16} className="text-brand-orange" />
+                                                )}
+                                            </button>
+                                        ))}
+                                    </div>
+                                )}
                             </div>
 
                             {/* Submit Button */}
@@ -157,7 +176,7 @@ Gostaria de uma análise inicial gratuita.`
                                 type="submit"
                                 className="w-full btn-primary flex items-center justify-center gap-2 text-base shadow-lg hover:shadow-xl mt-4"
                             >
-                                👉 Quero entender se faz sentido pra mim
+                                Quero entender se faz sentido pra mim
                             </button>
 
                             <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-2">

@@ -1,23 +1,27 @@
-import { Star } from 'lucide-react'
+import { Star, X, ZoomIn } from 'lucide-react'
 import { useState, useRef, useEffect } from 'react'
 
 const SocialProof = () => {
     const [activeIndex, setActiveIndex] = useState(0)
+    const [selectedImage, setSelectedImage] = useState(null)
     const scrollRef = useRef(null)
 
     const testimonials = [
         {
-            photoPlaceholder: <img src="/New Energia Solar/painelsolar1-vertical.jpg" alt="Instalação Solar 1" className="w-full h-full object-cover" />,
+            imageSrc: "/New Energia Solar/painelsolar1-vertical.jpg",
+            imageAlt: "Instalação Solar 1",
             quote: "Excelente atendimento e acompanhamento. O projeto ficou exatamente como prometido.",
             location: "Ituverava - SP"
         },
         {
-            photoPlaceholder: <img src="/New Energia Solar/painelsolar2-vertical.jpg" alt="Instalação Solar 2" className="w-full h-full object-cover" />,
+            imageSrc: "/New Energia Solar/painelsolar2-vertical.jpg",
+            imageAlt: "Instalação Solar 2",
             quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Energia Solar.",
             location: "Região - SP"
         },
         {
-            photoPlaceholder: <img src="/New Energia Solar/painelsolar3-vertical.jpg" alt="Instalação Solar 3" className="w-full h-full object-cover" />,
+            imageSrc: "/New Energia Solar/painelsolar3-vertical.jpg",
+            imageAlt: "Instalação Solar 3",
             quote: "Fiquei muito seguro com a explicação técnica. Entendi tudo antes de fechar.",
             location: "Ituverava - SP"
         }
@@ -81,9 +85,20 @@ const SocialProof = () => {
                 >
                     {testimonials.map((item, index) => (
                         <div key={index} className="min-w-[85%] sm:min-w-[350px] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group h-full flex flex-col">
-                            <div className="h-96 bg-gray-200 flex items-center justify-center text-gray-400 font-bold relative overflow-hidden group-hover:scale-[1.02] transition-transform duration-500">
-                                {item.photoPlaceholder}
-                                <div className="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                            <div
+                                className="h-96 bg-gray-200 flex items-center justify-center text-gray-400 font-bold relative overflow-hidden cursor-pointer"
+                                onClick={() => setSelectedImage(item.imageSrc)}
+                            >
+                                <img
+                                    src={item.imageSrc}
+                                    alt={item.imageAlt}
+                                    className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
+                                />
+                                <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+                                    <div className="bg-white/20 backdrop-blur-sm p-3 rounded-full text-white">
+                                        <ZoomIn size={24} />
+                                    </div>
+                                </div>
                             </div>
                             <div className="p-6 flex-1 flex flex-col">
                                 <div className="flex gap-1 text-yellow-400 mb-3">
@@ -116,6 +131,36 @@ const SocialProof = () => {
                     ))}
                 </div>
             </div>
+
+            {/* Image Modal */}
+            {selectedImage && (
+                <div
+                    className="fixed inset-0 z-[100] bg-black/90 backdrop-blur-sm flex items-center justify-center p-4 animate-in fade-in duration-200"
+                    onClick={() => setSelectedImage(null)}
+                >
+                    <div className="relative max-w-4xl max-h-[90vh] w-full flex flex-col items-center">
+                        <button
+                            className="absolute -top-12 right-0 md:fixed md:top-6 md:right-6 text-white/70 hover:text-white transition-colors z-[110]"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X size={32} />
+                        </button>
+                        {/* Mobile Close Button (Fixed Safe Area) */}
+                        <button
+                            className="fixed top-4 right-4 bg-black/50 p-2 rounded-full text-white md:hidden z-[110]"
+                            onClick={() => setSelectedImage(null)}
+                        >
+                            <X size={24} />
+                        </button>
+                        <img
+                            src={selectedImage}
+                            alt="Instalação em tela cheia"
+                            className="w-auto h-auto max-w-full max-h-[85vh] rounded-lg shadow-2xl object-contain"
+                            onClick={(e) => e.stopPropagation()}
+                        />
+                    </div>
+                </div>
+            )}
         </section>
     )
 }
