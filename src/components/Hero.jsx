@@ -48,11 +48,11 @@ const Hero = () => {
                 {/* Right: Image */}
                 <div className="relative order-1 lg:order-2">
                     <div className="relative rounded-3xl overflow-hidden shadow-2xl bg-gray-200 aspect-[4/3] group">
-                        {/* Placeholder for real image */}
-                        <div className="absolute inset-0 bg-brand-blue/10 flex items-center justify-center text-brand-blue/30 font-bold text-xl">
-                            [IMAGEM DE CASA REAL COM PLACAS ALINHADAS]
-                        </div>
-                        {/* If you have a real image, use: <img src={houseImage} alt="Casa com energia solar" className="object-cover w-full h-full" /> */}
+                        <img
+                            src="/New Energia Solar/painelsolar1-horizontal.jpg"
+                            alt="Casa com projetos de energia solar da New Energia Solar"
+                            className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                        />
                     </div>
 
                     {/* Floating Badge */}
