@@ -43,12 +43,10 @@ const Hero = () => {
                                 className="object-contain w-full h-full transform transition-transform duration-700 lg:group-hover:scale-105"
                             />
                         </div>
-                        {/* Mobile Floating Badge - Changed to Static on Mobile for Safety */}
-                        <div className="mt-2 ml-auto bg-white p-3 rounded-xl shadow-lg border-l-4 border-brand-orange flex items-center gap-3 max-w-fit md:absolute md:bottom-0 md:right-0 md:flex-col md:items-start md:max-w-[150px]">
-                            <div>
-                                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5 leading-none">Economia Real</p>
-                                <p className="text-brand-blue font-bold text-sm leading-tight">Até 95% de redução</p>
-                            </div>
+                        {/* Mobile Floating Badge - Adjusted for maximum safety on iPhone 12/narrow screens */}
+                        <div className="absolute bottom-0 right-0 bg-white p-3 rounded-tl-lg rounded-br-2xl shadow-lg border-l-4 border-brand-orange z-10 flex flex-col justify-center max-w-[140px]">
+                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5 leading-none">Economia Real</p>
+                            <p className="text-brand-blue font-bold text-sm leading-tight">Até 95% de redução</p>
                         </div>
                     </div>
 
