@@ -102,10 +102,15 @@
 @layer base {
   html {
     scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
   }
 
   body {
     @apply font-sans antialiased text-gray-800 bg-white;
+    overflow-x: hidden;
+    position: relative;
+    width: 100%;
   }
 }
 

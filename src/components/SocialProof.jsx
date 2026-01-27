@@ -45,7 +45,7 @@ const SocialProof = () => {
     }, [])
 
     return (
-        <section id="social-proof" className="py-20 relative overflow-hidden">
+        <section id="social-proof" className="py-12 lg:py-20 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -64,12 +64,12 @@ const SocialProof = () => {
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="text-center mb-12">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-6 backdrop-blur-md border border-white/20">
+                <div className="text-center mb-8 md:mb-12">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-4 backdrop-blur-md border border-white/20">
                         <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
                         CLIENTES
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-4">
+                    <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-4">
                         Famílias da região já optaram por fazer energia solar do jeito certo
                     </h2>
                     <p className="text-lg text-blue-50 max-w-2xl mx-auto">

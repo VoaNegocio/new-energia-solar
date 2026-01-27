@@ -46,7 +46,7 @@ const Differentials = () => {
     }, [])
 
     return (
-        <section id="differentials" className="py-24 relative overflow-hidden">
+        <section id="differentials" className="py-12 lg:py-24 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -65,12 +65,12 @@ const Differentials = () => {
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="max-w-3xl mx-auto text-center mb-12 md:mb-16">
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-6 backdrop-blur-md border border-white/20">
+                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-4 backdrop-blur-md border border-white/20">
                         <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
                         DIFERENCIAIS
                     </div>
-                    <h2 className="text-3xl md:text-4xl font-extrabold text-white mb-6">
+                    <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-4">
                         Na New, você não recebe só um orçamento.<br className="hidden md:block" />
                         <span className="text-brand-orange">Você recebe orientação e acompanhamento real.</span>
                     </h2>

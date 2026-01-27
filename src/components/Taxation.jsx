@@ -2,15 +2,15 @@ import { HelpCircle } from 'lucide-react'
 
 const Taxation = () => {
     return (
-        <section className="py-20 bg-brand-lightBlue/30">
+        <section className="py-12 lg:py-20 bg-brand-lightBlue/30">
             <div className="container-custom">
                 <div className="max-w-3xl mx-auto text-center">
-                    <div className="inline-flex items-center gap-2 text-brand-blue font-bold mb-6 bg-white px-4 py-2 rounded-full shadow-sm">
+                    <div className="inline-flex items-center gap-2 text-brand-blue font-bold mb-4 bg-white px-4 py-2 rounded-full shadow-sm">
                         <HelpCircle size={20} className="text-brand-orange" />
                         <span className="uppercase tracking-wider text-xs">Objeção Comum</span>
                     </div>
 
-                    <h2 className="text-3xl lg:text-4xl font-bold text-brand-blue mb-8">
+                    <h2 className="text-2xl lg:text-4xl font-bold text-brand-blue mb-6">
                         “E se o governo taxar a energia solar?”
                     </h2>
 

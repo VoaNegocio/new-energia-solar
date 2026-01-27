@@ -61,7 +61,7 @@ const FinalCTA = () => {
     }
 
     return (
-        <section id="contact" className="py-20 relative overflow-hidden">
+        <section id="contact" className="py-12 lg:py-20 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -80,16 +80,16 @@ const FinalCTA = () => {
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
+                <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
 
                     {/* Left: Copy */}
                     <div className="text-white">
-                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-6 backdrop-blur-sm border border-white/20">
+                        <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-4 backdrop-blur-sm border border-white/20">
                             <Calculator size={14} className="text-brand-orange" />
                             ANÁLISE DE VIABILIDADE
                         </div>
 
-                        <h2 className="text-3xl lg:text-5xl font-extrabold mb-6 leading-tight">
+                        <h2 className="text-2xl lg:text-5xl font-extrabold mb-6 leading-tight">
                             Entenda se a energia solar <span className="text-brand-orange">faz sentido</span> para a sua casa.
                         </h2>
 

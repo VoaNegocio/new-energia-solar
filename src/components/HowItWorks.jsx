@@ -30,10 +30,10 @@ const HowItWorks = () => {
     ]
 
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-white">
             <div className="container-custom">
-                <div className="text-center mb-16">
-                    <h2 className="text-3xl font-bold text-brand-blue mb-4">
+                <div className="text-center mb-10 lg:mb-16">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-brand-blue mb-4">
                         Como funciona a consultoria da New:
                     </h2>
                 </div>

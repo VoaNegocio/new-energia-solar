@@ -2,14 +2,14 @@ import { AlertTriangle } from 'lucide-react'
 
 const Problem = () => {
     return (
-        <section className="py-20 bg-white">
+        <section className="py-12 lg:py-20 bg-white">
             <div className="container-custom">
                 <div className="max-w-3xl mx-auto text-center">
-                    <div className="inline-flex items-center justify-center w-16 h-16 bg-red-100 rounded-full mb-8">
-                        <AlertTriangle className="text-red-500 w-8 h-8" />
+                    <div className="inline-flex items-center justify-center w-12 h-12 lg:w-16 lg:h-16 bg-red-100 rounded-full mb-6">
+                        <AlertTriangle className="text-red-500 w-6 h-6 lg:w-8 lg:h-8" />
                     </div>
 
-                    <h2 className="text-3xl font-bold text-brand-blue mb-8 leading-tight">
+                    <h2 className="text-2xl lg:text-3xl font-bold text-brand-blue mb-6 leading-tight">
                         Muitas pessoas se frustram com energia solar não por causa da placa, mas porque:
                     </h2>
 

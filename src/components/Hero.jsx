@@ -2,7 +2,7 @@ import React from 'react'
 
 const Hero = () => {
     return (
-        <section id="hero" className="relative pt-32 pb-20 lg:pt-48 lg:pb-32 overflow-hidden">
+        <section id="hero" className="relative pt-24 pb-12 lg:pt-48 lg:pb-32 overflow-hidden">
             {/* Video Background */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -19,34 +19,36 @@ const Hero = () => {
                 <div className="absolute inset-0 bg-gradient-to-r from-white/90 via-white/70 to-transparent"></div>
             </div>
 
-            <div className="container-custom grid lg:grid-cols-2 gap-12 items-center relative z-10">
+            <div className="container-custom grid lg:grid-cols-2 gap-8 lg:gap-12 items-center relative z-10">
 
                 {/* Left: Copy */}
                 <div>
-                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-xs font-bold mb-6 backdrop-blur-sm">
+                    <div className="inline-flex items-center gap-2 px-3 py-1 bg-brand-blue/10 text-brand-blue rounded-full text-xs font-bold mb-4 backdrop-blur-sm">
                         <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
                         PROJETO DE ENERGIA SOLAR
                     </div>
 
-                    <h1 className="text-4xl lg:text-5xl font-extrabold text-brand-blue leading-tight mb-6">
+                    <h1 className="text-2xl sm:text-4xl lg:text-5xl font-extrabold text-brand-blue leading-tight mb-4">
                         O problema da energia solar <span className="text-brand-orange">não é a placa.</span><br />
                         É o projeto mal feito.
                     </h1>
 
                     {/* Mobile Image (Between Title and Text) */}
                     {/* Mobile Image (Between Title and Text) */}
-                    <div className="lg:hidden relative mb-10">
+                    <div className="lg:hidden relative mb-10 max-w-full">
                         <div className="rounded-3xl overflow-hidden shadow-2xl bg-gray-200 aspect-[4/3] group relative z-0">
                             <img
                                 src="/New Energia Solar/painelsolar1-horizontal.webp"
                                 alt="Casa com projetos de energia solar da New Energia Solar"
-                                className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
+                                className="object-contain w-full h-full transform transition-transform duration-700 lg:group-hover:scale-105"
                             />
                         </div>
-                        {/* Mobile Floating Badge */}
-                        <div className="absolute -bottom-4 right-4 bg-white p-3 rounded-lg shadow-lg border-l-4 border-brand-orange z-10 flex flex-col justify-center">
-                            <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5 leading-none">Economia Real</p>
-                            <p className="text-brand-blue font-bold text-sm leading-tight">Até 95% de redução</p>
+                        {/* Mobile Floating Badge - Changed to Static on Mobile for Safety */}
+                        <div className="mt-2 ml-auto bg-white p-3 rounded-xl shadow-lg border-l-4 border-brand-orange flex items-center gap-3 max-w-fit md:absolute md:bottom-0 md:right-0 md:flex-col md:items-start md:max-w-[150px]">
+                            <div>
+                                <p className="text-[10px] text-gray-500 font-bold uppercase tracking-wider mb-0.5 leading-none">Economia Real</p>
+                                <p className="text-brand-blue font-bold text-sm leading-tight">Até 95% de redução</p>
+                            </div>
                         </div>
                     </div>
 

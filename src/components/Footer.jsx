@@ -7,8 +7,12 @@ const Footer = () => {
                 <div className="grid md:grid-cols-3 gap-8 mb-8">
                     {/* Brand */}
                     <div>
-                        <div className="text-2xl font-bold mb-4">
-                            NEW<span className="text-brand-orange">ENERGIA</span>
+                        <div className="mb-4">
+                            <img
+                                src="/logo-new-energia.png"
+                                alt="New Energia Solar"
+                                className="h-12 md:h-16 w-auto object-contain"
+                            />
                         </div>
                         <p className="text-brand-lightBlue/80 text-sm leading-relaxed max-w-xs">
                             Energia solar levada a sério. Projetos residenciais e comerciais com acompanhamento técnico de ponta a ponta.

@@ -28,9 +28,13 @@ const Header = () => {
         >
             <div className="container-custom flex justify-between items-center">
                 {/* Logo */}
-                <div className="text-2xl font-bold text-brand-blue">
-                    NEW<span className="text-brand-orange">ENERGIA</span>
-                </div>
+                <Link to="hero" smooth={true} duration={500} className="cursor-pointer block max-w-[60%]">
+                    <img
+                        src="/logo-new-energia.png"
+                        alt="New Energia Solar"
+                        className="h-8 md:h-12 w-auto object-contain"
+                    />
+                </Link>
 
                 {/* Desktop Nav */}
                 <nav className="hidden md:flex items-center gap-8">
@@ -57,7 +61,7 @@ const Header = () => {
 
                 {/* Mobile Menu Button */}
                 <button
-                    className="md:hidden text-brand-blue"
+                    className="md:hidden text-brand-blue flex-shrink-0"
                     onClick={() => setIsOpen(!isOpen)}
                 >
                     {isOpen ? <X size={28} /> : <Menu size={28} />}
