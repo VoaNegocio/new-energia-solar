@@ -46,7 +46,7 @@ const Differentials = () => {
     }, [])
 
     return (
-        <section id="differentials" className="py-12 lg:py-24 relative overflow-hidden">
+        <section id="differentials" className="py-8 lg:py-24 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -65,7 +65,7 @@ const Differentials = () => {
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="max-w-3xl mx-auto text-center mb-8 md:mb-16">
+                <div className="max-w-3xl mx-auto text-center mb-6 md:mb-16">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-4 backdrop-blur-md border border-white/20">
                         <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
                         DIFERENCIAIS
@@ -83,7 +83,7 @@ const Differentials = () => {
                     className="flex md:grid md:grid-cols-2 gap-6 overflow-x-auto snap-x snap-mandatory pb-8 md:pb-0 px-4 md:px-0 -mx-4 md:mx-auto max-w-4xl scrollbar-hide"
                 >
                     {differentials.map((item, index) => (
-                        <div key={index} className="flex-shrink-0 w-[85%] md:w-auto snap-center bg-white p-8 rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group">
+                        <div key={index} className="flex-shrink-0 w-[85%] md:w-auto snap-center bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group">
                             <div className="bg-brand-orange/10 w-14 h-14 rounded-xl flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300">
                                 {item.icon}
                             </div>

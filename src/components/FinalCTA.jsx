@@ -61,7 +61,7 @@ const FinalCTA = () => {
     }
 
     return (
-        <section id="contact" className="py-12 lg:py-20 relative overflow-hidden">
+        <section id="contact" className="py-8 lg:py-20 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -114,7 +114,7 @@ const FinalCTA = () => {
                     </div>
 
                     {/* Right: Form Card */}
-                    <div className="bg-white rounded-2xl shadow-2xl p-6 md:p-8 lg:p-10">
+                    <div className="bg-white rounded-xl shadow-2xl p-5 md:p-8 lg:p-10">
                         <h3 className="text-2xl font-bold text-brand-blue mb-2">
                             Faça uma análise inicial gratuita
                         </h3>

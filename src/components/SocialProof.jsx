@@ -45,7 +45,7 @@ const SocialProof = () => {
     }, [])
 
     return (
-        <section id="social-proof" className="py-12 lg:py-20 relative overflow-hidden">
+        <section id="social-proof" className="py-8 lg:py-20 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -64,7 +64,7 @@ const SocialProof = () => {
             </div>
 
             <div className="container-custom relative z-10">
-                <div className="text-center mb-8 md:mb-12">
+                <div className="text-center mb-6 md:mb-12">
                     <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-4 backdrop-blur-md border border-white/20">
                         <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
                         CLIENTES
@@ -84,7 +84,7 @@ const SocialProof = () => {
                     className="flex md:grid md:grid-cols-3 gap-6 overflow-x-auto snap-x snap-mandatory pt-4 pb-8 -mx-4 px-4 md:px-0 md:pb-0 md:overflow-visible scrollbar-hide"
                 >
                     {testimonials.map((item, index) => (
-                        <div key={index} className="min-w-[85%] sm:min-w-[350px] md:min-w-0 snap-center bg-white rounded-2xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group h-full flex flex-col">
+                        <div key={index} className="min-w-[85%] sm:min-w-[300px] md:min-w-0 snap-center bg-white rounded-xl overflow-hidden shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-orange/20 group h-full flex flex-col">
                             <div
                                 className="h-96 bg-gray-200 flex items-center justify-center text-gray-400 font-bold relative overflow-hidden cursor-pointer"
                                 onClick={() => setSelectedImage(item.imageSrc)}

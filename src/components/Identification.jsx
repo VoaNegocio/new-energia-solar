@@ -2,7 +2,7 @@ import { Check, X } from 'lucide-react'
 
 const Identification = () => {
     return (
-        <section id="identification" className="py-12 lg:py-24 relative overflow-hidden">
+        <section id="identification" className="py-8 lg:py-24 relative overflow-hidden">
             {/* Video Background with Masking Effects */}
             <div className="absolute inset-0 z-0">
                 <video
@@ -22,7 +22,7 @@ const Identification = () => {
 
             <div className="container-custom relative z-10">
                 <div className="max-w-4xl mx-auto">
-                    <div className="text-center mb-10 lg:mb-16">
+                    <div className="text-center mb-8 lg:mb-16">
                         <div className="inline-flex items-center gap-2 px-3 py-1 bg-white/10 text-white rounded-full text-xs font-bold mb-4 backdrop-blur-md border border-white/20">
                             <span className="w-2 h-2 bg-brand-orange rounded-full"></span>
                             PERFIL IDEAL
@@ -42,7 +42,7 @@ const Identification = () => {
                                 "Tem medo de gastar errado ou ser mal atendido",
                                 "Prefere qualidade e orientação a preço baixo"
                             ].map((item, index) => (
-                                <div key={index} className="group flex items-center gap-4 p-5 bg-white rounded-2xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-blue/20 cursor-default">
+                                <div key={index} className="group flex items-center gap-3 p-4 bg-white rounded-xl shadow-sm border border-gray-100 transition-all duration-300 hover:shadow-lg hover:-translate-y-1 hover:border-brand-blue/20 cursor-default">
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-green-50 flex items-center justify-center group-hover:bg-green-100 transition-colors">
                                         <Check size={20} className="text-green-600" />
                                     </div>
@@ -57,7 +57,7 @@ const Identification = () => {
                                 "Não é para quem escolhe só pelo menor preço",
                                 "Não é para quem quer decidir sem entender o projeto"
                             ].map((item, index) => (
-                                <div key={index} className="flex items-center gap-4 p-5 bg-white rounded-2xl border border-red-100 transition-all duration-300 hover:bg-red-50 hover:border-red-200">
+                                <div key={index} className="flex items-center gap-3 p-4 bg-white rounded-xl border border-red-100 transition-all duration-300 hover:bg-red-50 hover:border-red-200">
                                     <div className="flex-shrink-0 w-10 h-10 rounded-full bg-red-100 flex items-center justify-center">
                                         <X size={20} className="text-red-500" />
                                     </div>
