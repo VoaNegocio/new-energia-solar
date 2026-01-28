@@ -11,18 +11,21 @@ const SocialProof = () => {
             imageSrc: "/New Energia Solar/painelsolar1-vertical.webp",
             imageAlt: "Instalação Solar 1",
             quote: "Excelente atendimento e acompanhamento. O projeto ficou exatamente como prometido.",
-            location: "Ituverava - SP"
+            name: "Victor Hugo - Pezao",
+            location: "Miguelópolis - SP"
         },
         {
             imageSrc: "/New Energia Solar/painelsolar7-vertical.webp",
             imageAlt: "Instalação Solar 2",
             quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Energia Solar.",
-            location: "Região - SP"
+            name: "Antônio Carlos de Souza Junior - Bilim",
+            location: "Ituverava - SP"
         },
         {
             imageSrc: "/New Energia Solar/card3.webp",
             imageAlt: "Instalação Solar 3",
             quote: "Fiquei muito seguro com a explicação técnica. Entendi tudo antes de fechar.",
+            name: "Eclesiastes Marques",
             location: "Ituverava - SP"
         }
     ]
@@ -112,7 +115,7 @@ const SocialProof = () => {
                                     "{item.quote}"
                                 </p>
                                 <div className="mt-auto pt-4 border-t border-gray-50">
-                                    <p className="font-bold text-brand-blue">- Cliente Satisfeito</p>
+                                    <p className="font-bold text-brand-blue">{item.name}</p>
                                     <p className="text-xs text-gray-500">{item.location}</p>
                                 </div>
                             </div>
