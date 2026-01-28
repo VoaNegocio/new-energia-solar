@@ -17,7 +17,7 @@ const SocialProof = () => {
         {
             imageSrc: "/New Energia Solar/painelsolar7-vertical.webp",
             imageAlt: "Instalação Solar 2",
-            quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Energia Solar.",
+            quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Segurança e Energia Solar.",
             name: "Antônio Carlos de Souza Junior - Bilim",
             location: "Ituverava - SP"
         },

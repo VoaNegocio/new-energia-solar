@@ -10,7 +10,7 @@ const Footer = () => {
                         <div className="mb-4">
                             <img
                                 src="/logo-new-energia.png"
-                                alt="New Energia Solar"
+                                alt="New Segurança e Energia Solar"
                                 className="h-12 md:h-16 w-auto object-contain"
                             />
                         </div>
@@ -43,7 +43,7 @@ const Footer = () => {
                 </div>
 
                 <div className="border-t border-white/10 pt-8 text-center text-xs text-brand-lightBlue/60">
-                    <p>&copy; {new Date().getFullYear()} New Energia Solar. Todos os direitos reservados.</p>
+                    <p>&copy; 2009 New Segurança e Energia Solar. Todos os direitos reservados.</p>
                 </div>
             </div>
         </footer>

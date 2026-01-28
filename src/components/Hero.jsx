@@ -52,7 +52,7 @@ const Hero = () => {
                     <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed max-w-xl">
                         Antes de investir em energia solar, você precisa ter certeza de que o projeto faz sentido para a sua casa — hoje e no futuro.
                         <br /><br className="hidden sm:block" />
-                        A <strong>New</strong> acompanha você do início à instalação, com clareza, cuidado e acabamento profissional.
+
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">

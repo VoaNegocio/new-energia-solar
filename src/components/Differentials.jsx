@@ -71,7 +71,7 @@ const Differentials = () => {
                         DIFERENCIAIS
                     </div>
                     <h2 className="text-2xl md:text-4xl font-extrabold text-white mb-4">
-                        Na New, você não recebe só um orçamento.<br className="hidden md:block" />
+                        Na New Segurança e Energia Solar, você não recebe só um orçamento.<br className="hidden md:block" />
                         <span className="text-brand-orange">Você recebe orientação e acompanhamento real.</span>
                     </h2>
                     <p className="text-blue-50 text-lg">O que muda na prática:</p>

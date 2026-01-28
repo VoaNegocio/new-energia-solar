@@ -34,7 +34,7 @@ const HowItWorks = () => {
             <div className="container-custom">
                 <div className="text-center mb-10 lg:mb-16">
                     <h2 className="text-2xl lg:text-3xl font-bold text-brand-blue mb-4">
-                        Como funciona a consultoria da New:
+                        Como funciona a consultoria da New Segurança e Energia Solar:
                     </h2>
                 </div>
 
