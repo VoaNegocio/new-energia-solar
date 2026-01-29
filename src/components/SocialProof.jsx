@@ -11,21 +11,21 @@ const SocialProof = () => {
             imageSrc: "/New Energia Solar/painelsolar1-vertical.webp",
             imageAlt: "Instalação Solar 1",
             quote: "Excelente atendimento e acompanhamento. O projeto ficou exatamente como prometido.",
-            name: "Victor Hugo - Pezao",
-            location: "Miguelópolis - SP"
+            name: "Eclesiastes Marques ",
+            location: "Ituverava - SP"
         },
         {
             imageSrc: "/New Energia Solar/painelsolar7-vertical.webp",
             imageAlt: "Instalação Solar 2",
             quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Segurança e Energia Solar.",
-            name: "Antônio Carlos de Souza Junior - Bilim",
-            location: "Ituverava - SP"
+            name: "Victor Hugo - Pezão",
+            location: "Miguelópolis - SP"
         },
         {
             imageSrc: "/New Energia Solar/card3.webp",
             imageAlt: "Instalação Solar 3",
             quote: "Fiquei muito seguro com a explicação técnica. Entendi tudo antes de fechar.",
-            name: "Eclesiastes Marques",
+            name: "Antônio Carlos de Souza Junior ",
             location: "Ituverava - SP"
         }
     ]
