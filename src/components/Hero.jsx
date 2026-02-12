@@ -29,8 +29,7 @@ const Hero = () => {
                     </div>
 
                     <h1 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-brand-blue leading-tight mb-3">
-                        O problema da energia solar <span className="text-brand-orange">não é a placa.</span><br />
-                        É o projeto mal feito.
+                        Se você começar a pagar a sua placa hoje, um dia você <span className="text-brand-orange">não precisará mais, pagar a conta de energia!</span>
                     </h1>
 
                     {/* Mobile Image (Between Title and Text) */}
@@ -45,21 +44,19 @@ const Hero = () => {
                         {/* Mobile Floating Badge - Compacted */}
                         <div className="absolute bottom-0 right-0 bg-white p-2 rounded-tl-lg rounded-br-xl shadow-lg border-l-4 border-brand-orange z-10 flex flex-col justify-center max-w-[120px]">
                             <p className="text-[9px] text-gray-500 font-bold uppercase tracking-wider mb-0.5 leading-none">Economia Real</p>
-                            <p className="text-brand-blue font-bold text-xs leading-tight">Até 95% de redução</p>
+                            <p className="text-brand-blue font-bold text-xs leading-tight">Até 95% de redução na sua conta de energia.</p>
                         </div>
                     </div>
 
                     <p className="text-base sm:text-lg text-gray-600 mb-6 leading-relaxed max-w-xl">
-                        Antes de investir em energia solar, você precisa ter certeza de que o projeto faz sentido para a sua casa — hoje e no futuro.
-                        <br /><br className="hidden sm:block" />
-
+                        Energia solar é uma conta que você paga por um projeto que é seu!
                     </p>
 
                     <div className="flex flex-col sm:flex-row gap-4">
                         <a href="#contact" className="btn-3d-primary w-full sm:w-auto px-6 py-3 text-base sm:text-lg">
                             <span className="relative z-10 flex items-center justify-center gap-2">
                                 <svg className="w-4 h-4 fill-current" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M416 208H272V64c0-17.67-14.33-32-32-32h-32c-17.67 0-32 14.33-32 32v144H32c-17.67 0-32 14.33-32 32v32c0 17.67 14.33 32 32 32h144v144c0 17.67 14.33 32 32 32h32c17.67 0 32-14.33 32-32V304h144c17.67 0 32-14.33 32-32v-32c0-17.67-14.33-32-32-32z" /></svg>
-                                Quero minha análise gratuita
+                                Quero fazer um orçamento gratuito
                             </span>
                         </a>
                     </div>
@@ -93,7 +90,7 @@ const Hero = () => {
                     {/* Floating Badge */}
                     <div className="absolute -bottom-6 -left-6 bg-white p-4 rounded-xl border-l-4 border-brand-orange hidden md:block static-3d-card">
                         <p className="text-xs text-gray-500 font-bold uppercase tracking-wider mb-1">Economia Real</p>
-                        <p className="text-brand-blue font-bold text-lg">Até 95% de redução</p>
+                        <p className="text-brand-blue font-bold text-lg">Até 95% de redução na sua conta de energia.</p>
                     </div>
                 </div>
             </div>

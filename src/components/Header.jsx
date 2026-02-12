@@ -55,7 +55,7 @@ const Header = () => {
                         duration={500}
                         className="btn-primary py-2 px-6 text-sm cursor-pointer"
                     >
-                        Falar com Especialista
+                        Entrar em contato via WhatsApp
                     </Link>
                 </nav>
 
@@ -89,7 +89,7 @@ const Header = () => {
                             className="mt-4 btn-primary w-full text-center cursor-pointer"
                             onClick={() => setIsOpen(false)}
                         >
-                            Falar com Especialista
+                            Entrar em contato via WhatsApp
                         </Link>
                     </div>
                 )}
