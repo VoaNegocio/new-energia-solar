@@ -29,7 +29,7 @@ const Hero = () => {
                     </div>
 
                     <h1 className="text-xl sm:text-4xl lg:text-5xl font-extrabold text-brand-blue leading-tight mb-3">
-                        Se você começar a pagar a sua placa hoje, um dia você <span className="text-brand-orange">não precisará mais, pagar a conta de energia!</span>
+                        Se você começar a pagar a sua placa hoje, um dia você <span className="text-brand-orange">não precisará mais pagar a conta de energia!</span>
                     </h1>
 
                     {/* Mobile Image (Between Title and Text) */}
