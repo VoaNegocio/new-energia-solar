@@ -30,8 +30,10 @@ const Header = () => {
                 {/* Logo */}
                 <Link to="hero" smooth={true} duration={500} className="cursor-pointer block max-w-[60%]">
                     <img
-                        src="/logo-new-energia.png"
+                        src="/logo-new-energia.webp"
                         alt="New Energia Solar"
+                        width="600"
+                        height="200"
                         className="h-8 md:h-12 w-auto object-contain"
                     />
                 </Link>

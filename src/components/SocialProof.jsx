@@ -10,6 +10,8 @@ const SocialProof = () => {
         {
             imageSrc: "/New Energia Solar/painelsolar1-vertical.webp",
             imageAlt: "Instalação Solar 1",
+            width: "960",
+            height: "1148",
             quote: "Excelente atendimento e acompanhamento. O projeto ficou exatamente como prometido.",
             name: "Eclesiastes Marques ",
             location: "Ituverava - SP"
@@ -17,6 +19,8 @@ const SocialProof = () => {
         {
             imageSrc: "/New Energia Solar/painelsolar7-vertical.webp",
             imageAlt: "Instalação Solar 2",
+            width: "900",
+            height: "1076",
             quote: "O acabamento ficou perfeito. Recomendo muito a equipe da New Segurança e Energia Solar.",
             name: "Victor Hugo - Pezão",
             location: "Miguelópolis - SP"
@@ -24,6 +28,8 @@ const SocialProof = () => {
         {
             imageSrc: "/New Energia Solar/card3.webp",
             imageAlt: "Instalação Solar 3",
+            width: "960",
+            height: "1148",
             quote: "Fiquei muito seguro com a explicação técnica. Entendi tudo antes de fechar.",
             name: "Antônio Carlos de Souza Junior ",
             location: "Ituverava - SP"
@@ -95,6 +101,9 @@ const SocialProof = () => {
                                 <img
                                     src={item.imageSrc}
                                     alt={item.imageAlt}
+                                    width={item.width}
+                                    height={item.height}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transform transition-transform duration-700 group-hover:scale-105"
                                 />
                                 <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">

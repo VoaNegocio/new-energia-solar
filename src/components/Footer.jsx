@@ -9,8 +9,11 @@ const Footer = () => {
                     <div>
                         <div className="mb-4">
                             <img
-                                src="/logo-new-energia.png"
+                                src="/logo-new-energia.webp"
                                 alt="New Segurança e Energia Solar"
+                                width="600"
+                                height="200"
+                                loading="lazy"
                                 className="h-12 md:h-16 w-auto object-contain"
                             />
                         </div>

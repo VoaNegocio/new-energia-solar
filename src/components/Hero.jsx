@@ -35,11 +35,17 @@ const Hero = () => {
                     {/* Mobile Image (Between Title and Text) */}
                     <div className="lg:hidden relative mb-6 max-w-full">
                         <div className="rounded-2xl overflow-hidden shadow-xl bg-gray-200 aspect-[16/9] group relative z-0">
-                            <img
-                                src="/New Energia Solar/painelsolar1-horizontal.webp"
-                                alt="Casa com projetos de energia solar da New Energia Solar"
-                                className="object-cover w-full h-full transform transition-transform duration-700 lg:group-hover:scale-105"
-                            />
+                            <picture>
+                                <source media="(max-width: 768px)" srcSet="/New Energia Solar/painelsolar1-horizontal-mobile.webp" />
+                                <img
+                                    src="/New Energia Solar/painelsolar1-horizontal.webp"
+                                    alt="Casa com projetos de energia solar da New Energia Solar"
+                                    fetchpriority="high"
+                                    width="1600"
+                                    height="900"
+                                    className="object-cover w-full h-full transform transition-transform duration-700 lg:group-hover:scale-105"
+                                />
+                            </picture>
                         </div>
                         {/* Mobile Floating Badge - Compacted */}
                         <div className="absolute bottom-0 right-0 bg-white p-2 rounded-tl-lg rounded-br-xl shadow-lg border-l-4 border-brand-orange z-10 flex flex-col justify-center max-w-[120px]">
@@ -83,6 +89,9 @@ const Hero = () => {
                         <img
                             src="/New Energia Solar/painelsolar1-horizontal.webp"
                             alt="Casa com projetos de energia solar da New Energia Solar"
+                            fetchpriority="high"
+                            width="1600"
+                            height="900"
                             className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
