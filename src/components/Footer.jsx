@@ -11,8 +11,8 @@ const Footer = () => {
                             <img
                                 src="/logo-new-energia.webp"
                                 alt="New Segurança e Energia Solar"
-                                width="600"
-                                height="200"
+                                width="300"
+                                height="100"
                                 loading="lazy"
                                 className="h-12 md:h-16 w-auto object-contain"
                             />

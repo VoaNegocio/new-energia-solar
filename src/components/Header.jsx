@@ -32,8 +32,8 @@ const Header = () => {
                     <img
                         src="/logo-new-energia.webp"
                         alt="New Energia Solar"
-                        width="600"
-                        height="200"
+                        width="300"
+                        height="100"
                         className="h-8 md:h-12 w-auto object-contain"
                     />
                 </Link>
@@ -44,6 +44,7 @@ const Header = () => {
                         <Link
                             key={link.name}
                             to={link.to}
+                            href={`#${link.to}`}
                             smooth={true}
                             duration={500}
                             className="text-brand-blue hover:text-brand-orange font-medium cursor-pointer transition-colors"
@@ -53,6 +54,7 @@ const Header = () => {
                     ))}
                     <Link
                         to="contact"
+                        href="#contact"
                         smooth={true}
                         duration={500}
                         className="btn-primary py-2 px-6 text-sm cursor-pointer"
@@ -63,6 +65,7 @@ const Header = () => {
 
                 {/* Mobile Menu Button */}
                 <button
+                    aria-label="Alternar Menu Mobile"
                     className="md:hidden text-brand-blue flex-shrink-0"
                     onClick={() => setIsOpen(!isOpen)}
                 >
@@ -76,6 +79,7 @@ const Header = () => {
                             <Link
                                 key={link.name}
                                 to={link.to}
+                                href={`#${link.to}`}
                                 smooth={true}
                                 duration={500}
                                 className="py-3 text-brand-blue font-medium border-b border-gray-50 last:border-0"
@@ -86,6 +90,7 @@ const Header = () => {
                         ))}
                         <Link
                             to="contact"
+                            href="#contact"
                             smooth={true}
                             duration={500}
                             className="mt-4 btn-primary w-full text-center cursor-pointer"

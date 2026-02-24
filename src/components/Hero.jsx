@@ -41,8 +41,8 @@ const Hero = () => {
                                     src="/New Energia Solar/painelsolar1-horizontal.webp"
                                     alt="Casa com projetos de energia solar da New Energia Solar"
                                     fetchpriority="high"
-                                    width="1600"
-                                    height="900"
+                                    width="800"
+                                    height="450"
                                     className="object-cover w-full h-full transform transition-transform duration-700 lg:group-hover:scale-105"
                                 />
                             </picture>
@@ -90,8 +90,8 @@ const Hero = () => {
                             src="/New Energia Solar/painelsolar1-horizontal.webp"
                             alt="Casa com projetos de energia solar da New Energia Solar"
                             fetchpriority="high"
-                            width="1600"
-                            height="900"
+                            width="800"
+                            height="450"
                             className="object-cover w-full h-full transform transition-transform duration-700 group-hover:scale-105"
                         />
                     </div>
