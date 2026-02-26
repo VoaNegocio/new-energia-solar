@@ -1,7 +1,7 @@
 import React from 'react'
 
 const Hero = () => {
-    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site."
+    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site%2C%20gostaria%20de%20um%20or%C3%A7amento."
 
     return (
         <section id="hero" className="relative pt-20 pb-8 lg:pt-48 lg:pb-32 overflow-hidden">

@@ -1,7 +1,7 @@
 import { Instagram, Facebook, Phone, Mail } from 'lucide-react'
 
 const Footer = () => {
-    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site."
+    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site%2C%20gostaria%20de%20um%20or%C3%A7amento."
 
     return (
         <footer className="bg-brand-blue text-white py-12">

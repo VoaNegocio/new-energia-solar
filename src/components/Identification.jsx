@@ -1,7 +1,7 @@
 import { Check, X } from 'lucide-react'
 
 const Identification = () => {
-    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site."
+    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site%2C%20gostaria%20de%20um%20or%C3%A7amento."
 
     return (
         <section id="identification" className="py-8 lg:py-24 relative overflow-hidden">
