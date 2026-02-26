@@ -1,64 +1,7 @@
-import { useState } from 'react'
-import { ArrowRight, CheckCircle, Calculator, ChevronDown } from 'lucide-react'
-import { useNavigate } from 'react-router-dom'
+import { ArrowRight, CheckCircle, Calculator } from 'lucide-react'
 
 const FinalCTA = () => {
-    const navigate = useNavigate()
-    const [formData, setFormData] = useState({
-        name: '',
-        whatsapp: '',
-        billValue: ''
-    })
-    const [isDropdownOpen, setIsDropdownOpen] = useState(false)
-
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setFormData(prev => ({
-            ...prev,
-            [name]: value
-        }))
-    }
-
-    const billOptions = [
-        "Até R$200",
-        "De R$200 a R$300",
-        "De R$300 a R$500",
-        "Acima de R$500"
-    ]
-
-    const handleSubmit = async (e) => {
-        e.preventDefault()
-
-        // 1. Enviar para Webhook (CRM, n8n, Zapier)
-        // Substitua pela URL do seu webhook real
-        const webhookUrl = "https://hook.us1.make.com/bzgcth851gevkhsr4p821hqcscrwk3nu"
-
-        if (webhookUrl) {
-            try {
-                // Prepare data as URLSearchParams (standard form data)
-                const params = new URLSearchParams()
-                params.append('name', formData.name)
-                params.append('whatsapp', formData.whatsapp)
-                params.append('billValue', formData.billValue)
-                params.append('submittedAt', new Date().toISOString())
-                params.append('source', "Landing Page Solar")
-
-                await fetch(webhookUrl, {
-                    method: 'POST',
-                    headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-                    body: params,
-                    mode: 'no-cors'
-                })
-            } catch (error) {
-                console.error("Erro ao enviar para webhook:", error)
-            }
-        }
-
-
-
-        // 3. Redirecionar para página de Obrigado
-        navigate('/obrigado')
-    }
+    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site."
 
     return (
         <section id="contact" className="py-8 lg:py-20 relative overflow-hidden">
@@ -116,102 +59,33 @@ const FinalCTA = () => {
                     {/* Right: Form Card */}
                     <div className="bg-white rounded-xl shadow-2xl p-5 md:p-8 lg:p-10">
                         <h3 className="text-2xl font-bold text-brand-blue mb-2">
-                            Faça uma análise inicial gratuita
+                            Fale agora com um especialista
                         </h3>
                         <p className="text-gray-500 text-sm mb-6">
-                            Preencha os dados abaixo para entender se a energia solar é uma boa decisão para você.
+                            Clique abaixo para iniciar uma conversa direta pelo WhatsApp e tirar suas dúvidas sobre energia solar.
                         </p>
 
-                        <form onSubmit={handleSubmit} className="space-y-6">
-                            {/* Name */}
-                            <div>
-                                <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">Nome</label>
-                                <input
-                                    type="text"
-                                    id="name"
-                                    name="name"
-                                    required
-                                    value={formData.name}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800 text-base"
-                                    placeholder="Seu nome completo"
-                                />
-                            </div>
-
-                            {/* WhatsApp */}
-                            <div>
-                                <label htmlFor="whatsapp" className="block text-sm font-semibold text-gray-700 mb-2">WhatsApp</label>
-                                <input
-                                    type="tel"
-                                    id="whatsapp"
-                                    name="whatsapp"
-                                    required
-                                    value={formData.whatsapp}
-                                    onChange={handleChange}
-                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all placeholder-gray-400 text-gray-800 text-base"
-                                    placeholder="(00) 00000-0000"
-                                />
-                            </div>
-
-                            {/* Bill Value - Custom Dropdown */}
-                            <div className="relative">
-                                <label className="block text-sm font-semibold text-gray-700 mb-2">Gasto médio mensal com energia</label>
-                                <button
-                                    type="button"
-                                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                                    className="w-full px-4 py-3 rounded-xl bg-gray-50 shadow-inner border border-gray-200 focus:border-brand-orange focus:ring-2 focus:ring-brand-orange/20 outline-none transition-all text-gray-800 text-base text-left flex items-center justify-between"
-                                >
-                                    <span className={formData.billValue ? "text-gray-800" : "text-gray-400"}>
-                                        {formData.billValue || "Selecione uma opção..."}
-                                    </span>
-                                    <ChevronDown
-                                        size={20}
-                                        className={`text-gray-500 transition-transform duration-300 ${isDropdownOpen ? 'rotate-180' : ''}`}
-                                    />
-                                </button>
-
-                                {isDropdownOpen && (
-                                    <div className="absolute z-20 top-full left-0 right-0 mt-2 bg-white rounded-xl shadow-xl border border-gray-100 overflow-hidden animate-in fade-in zoom-in-95 duration-200">
-                                        {billOptions.map((option, index) => (
-                                            <button
-                                                key={index}
-                                                type="button"
-                                                onClick={() => {
-                                                    setFormData(prev => ({ ...prev, billValue: option }))
-                                                    setIsDropdownOpen(false)
-                                                }}
-                                                className="w-full px-4 py-3 text-left hover:bg-brand-orange/5 hover:text-brand-orange transition-colors flex items-center justify-between group"
-                                            >
-                                                <span className={`text-base ${formData.billValue === option ? 'font-bold text-brand-orange' : 'text-gray-700'}`}>
-                                                    {option}
-                                                </span>
-                                                {formData.billValue === option && (
-                                                    <CheckCircle size={16} className="text-brand-orange" />
-                                                )}
-                                            </button>
-                                        ))}
-                                    </div>
-                                )}
-                            </div>
-
-                            {/* Submit Button */}
-                            <button
-                                type="submit"
-                                className="w-full btn-3d-primary flex items-center justify-center gap-2 text-lg py-4 mt-6"
+                        <div className="space-y-6">
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="w-full btn-3d-primary flex items-center justify-center gap-2 text-lg py-4 mt-2"
                             >
                                 <span className="relative z-10 flex items-center gap-2">
-                                    Quero entender se faz sentido pra mim
+                                    Quero falar no WhatsApp
                                 </span>
-                            </button>
+                                <ArrowRight size={20} className="relative z-10" />
+                            </a>
 
                             <p className="text-center text-xs text-gray-400 mt-4 flex items-center justify-center gap-2">
-                                <span>Análise inicial sem custo</span>
-                                <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                 <span>Atendimento humano</span>
+                                <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
+                                <span>Resposta rápida</span>
                                 <span className="w-1 h-1 bg-gray-300 rounded-full"></span>
                                 <span>Sem compromisso</span>
                             </p>
-                        </form>
+                        </div>
                     </div>
 
                 </div>
