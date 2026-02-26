@@ -1,6 +1,8 @@
 import { Instagram, Facebook, Phone, Mail } from 'lucide-react'
 
 const Footer = () => {
+    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site."
+
     return (
         <footer className="bg-brand-blue text-white py-12">
             <div className="container-custom">
@@ -37,10 +39,14 @@ const Footer = () => {
                     <div>
                         <h3 className="text-lg font-bold mb-4 text-brand-orange">Contato</h3>
                         <div className="space-y-3 text-sm text-brand-lightBlue/80">
-                            <a href="#contact" className="flex items-center gap-2 hover:text-white transition-colors">
+                            <a
+                                href={whatsappUrl}
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="flex items-center gap-2 hover:text-white transition-colors"
+                            >
                                 Quero falar com um especialista
                             </a>
-
                         </div>
                     </div>
                 </div>

@@ -5,6 +5,7 @@ import { Menu, X } from 'lucide-react'
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false)
     const [scrolled, setScrolled] = useState(false)
+    const whatsappUrl = "https://wa.me/551638393638?text=Ol%C3%A1%2C%20vim%20pelo%20site."
 
     useEffect(() => {
         const handleScroll = () => {
@@ -52,15 +53,14 @@ const Header = () => {
                             {link.name}
                         </Link>
                     ))}
-                    <Link
-                        to="contact"
-                        href="#contact"
-                        smooth={true}
-                        duration={500}
+                    <a
+                        href={whatsappUrl}
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="btn-primary py-2 px-6 text-sm cursor-pointer"
                     >
                         Entrar em contato via WhatsApp
-                    </Link>
+                    </a>
                 </nav>
 
                 {/* Mobile Menu Button */}
@@ -88,16 +88,14 @@ const Header = () => {
                                 {link.name}
                             </Link>
                         ))}
-                        <Link
-                            to="contact"
-                            href="#contact"
-                            smooth={true}
-                            duration={500}
+                        <a
+                            href={whatsappUrl}
+                            target="_blank"
+                            rel="noopener noreferrer"
                             className="mt-4 btn-primary w-full text-center cursor-pointer"
-                            onClick={() => setIsOpen(false)}
                         >
                             Entrar em contato via WhatsApp
-                        </Link>
+                        </a>
                     </div>
                 )}
             </div>
